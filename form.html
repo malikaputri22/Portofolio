@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+    <title>Login Form</title>
+
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--body-color);
+            color: var(--text-color-second);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Gaya untuk header dan navbar */
+        #header {
+            background-color: var(--first-color);
+            color: var(--color-white);
+            padding: 15px 0;
+            position: sticky; /* Menjadikan navbar sticky */
+            top: 0; /* Mengatur posisi atas */
+            z-index: 1000; /* Menjaga agar navbar berada di atas konten lain */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan */
+        }
+
+        /* Navigation Styles */
+        .nav-menu {
+            margin: 0;
+            padding: 0;
+        }
+        .nav_menu_list {
+            font-size: 16px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        .nav_list {
+            margin: 0 15px;
+        }
+        .nav-link {
+            color: white; /* Warna link navbar */
+            text-decoration: none;
+            padding: 10px; /* Tambahkan padding untuk area klik yang lebih baik */
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Efek hover */
+            border-radius: 4px; /* Rounded corners saat hover */
+        }
+
+        /* Centering the login container */
+        .login-container {
+            max-width: 400px; /* Maximum width */
+            width: 90%; /* Responsive width */
+            margin: 20px auto; /* Centering */
+            background-color: var(--color-white);
+            padding: 30px; /* Reduced padding for a compact form */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--text-color-third);
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container input[type="submit"],
+        .login-container input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--first-color);
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-container input[type="reset"] {
+            background-color: var(--second-color);
+        }
+
+        .login-container input[type="submit"]:hover,
+        .login-container input[type="reset"]:hover {
+            opacity: 0.9;
+            background-color: var(--first-color-hover);
+        }
+
+        /* Tutorial section text color */
+        .tutorial h3,
+        .tutorial p {
+            color: var(--text-color-second);
+            margin: 10px 0; /* Added margin for spacing */
+        }
+
+        #footer {
+            margin-top: auto; /* Pushes the footer to the bottom */
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tabel.html" class="nav-link active-link"
+                >Cara Membuat Tabel</a
+              >
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Cara Membuat Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+                <a href="register.html" class="nav-link">Cara Membuat Register</a>
+                <div class="circle"></div>
+              </li>
+          </ul>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Container utama untuk form login -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <!-- Form login -->
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div style="display: flex; justify-content: space-between;">
+                <input type="submit" value="Login">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        <br>
+    </div>
+
+    <!-- Tutorial Section -->
+    <div class="tutorial">
+        <h3>Cara Membuat Form Login</h3>
+        <p>Berikut adalah langkah-langkah untuk membuatnya:</p>
+        <p><strong>1. Membuat Elemen Form:</strong> Gunakan elemen <code>&lt;form&gt;</code> untuk membuat form login. Elemen ini akan membungkus semua input dan tombol yang kita butuhkan.</p>
+        <p><strong>2. Menambahkan Input:</strong> Tambahkan dua elemen <code>&lt;input&gt;</code>. Satu untuk username dan satu untuk password. Pastikan untuk menambahkan atribut <code>type="text"</code> untuk username dan <code>type="password"</code> untuk password. Atribut <code>required</code> memastikan pengguna harus mengisi kedua field tersebut.</p>
+        <p><strong>3. Membuat Tombol Submit:</strong> Gunakan elemen <code>&lt;input type="submit"&gt;</code> untuk tombol login.</p>
+        <p><strong>4. Tombol Reset:</strong> Anda juga bisa menambahkan tombol reset dengan <code>&lt;input type="reset"&gt;</code>.</p>
+        <p><strong>5. Menambahkan Gaya CSS:</strong> Anda bisa mengatur warna latar belakang, margin, padding, dan banyak lagi agar form lebih menarik dan nyaman digunakan.</p>
+        <p><strong>6. Uji Coba Form:</strong> Setelah selesai, pastikan untuk menguji form login Anda. Coba masukkan data yang benar dan salah untuk memastikan semuanya berfungsi dengan baik.</p>
+    </div>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+          <p>Malika Adelia Putri</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="#home">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="tabel.html">Cara Membuat Tabel</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="form.html">Cara Membuat Form</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="register.html">Cara Membuat Register</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+            <a href="https://www.instagram.com/m4likaadlp/?next=%2F" target="_blank">
+              <i class="uil uil-instagram"></i>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://www.linkedin.com/in/malika-adelia-putri-468bba168/" target="_blank">
+              <i class="uil uil-linkedin-alt"></i>
+            </a>
+          </div>
+          <div class="icon"><i class="uil uil-dribbble"></i></div>
+          <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Malika</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        body {
+            background-color: #fff; /* Background color */
+        }
+        h2, p {
+            color: black; /* Text color for tutorial explanations */
+        }
+        table {
+            margin-top: 100px;
+            width: 90%; /* Table width */
+            border-collapse: collapse; /* Combine borders between cells */
+            background-color: #e3d6f7; /* Light purple for table */
+        }
+        th, td {
+            border: 1px solid rgb(20, 28, 33); /* Cell borders */
+            padding: 6px; /* Cell padding */
+            text-align: left; /* Text alignment */
+        }
+        th {
+            background-color: #d1b5f0; /* Header background color */
+        }
+        .tutorial {
+            margin: 20px;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto; /* Horizontal scrolling if code is too wide */
+        }
+
+        /* --------- NAVIGATION STYLES --------- */
+
+        .nav-menu {
+            display: flex; /* Flex container */
+        }
+
+        .nav_menu_list {
+            font-size: 12px;
+            display: flex; /* Align items horizontally */
+            list-style-type: none; /* Remove default list styles */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        .nav_list {
+            margin-right: 20px; /* Space between menu items */
+        }
+
+        .nav_list:last-child {
+            margin-right: 0; /* Remove margin from the last item */
+        }
+    </style>
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+    <title>Basic HTML Table</title>
+</head>
+<body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tabel.html" class="nav-link active-link"
+                >Cara Membuat Tabel</a
+              >
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Cara Membuat Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+                <a href="register.html" class="nav-link">Cara Membuat Register</a>
+                <div class="circle"></div>
+              </li>
+          </ul>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+    </header>
+
+    <p>Contoh tabel:</p>
+    <!-- Membuat tabel sederhana -->
+    <table>
+        <thead>
+            <tr>
+                <th>NPM</th>
+                <th>Nama</th>
+                <th>IPK Sem 1-8</th>
+                <th>Jurusan</th>
+                <th>Fakultas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5220311046</td>
+                <td>Malika</td>
+                <td>3.82</td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5223456161</td>
+                <td>Adelia</td>
+                <td>3.75</td>
+                <td>Manajemen</td>
+                <td>Bisnis dan Humaniora</td>
+            </tr>
+            <tr>
+                <td>5229875311</td>
+                <td>Putri</td>
+                <td>3.9</td>
+                <td>Teknik Elektro</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- --------------- TUTORIAL --------------- -->
+    <div class="tutorial">
+        <h2>Cara Membuat Tabel di HTML</h2>
+        <p>Berikut adalah cara membuat tabel di HTML:</p>
+        <ol>
+            <li>Gunakan tag <code>&lt;table&gt;</code> untuk mulai membuat tabel.</li>
+            <li>Tambahkan <code>&lt;thead&gt;</code> untuk bagian header tabel.</li>
+            <li>Masukkan <code>&lt;tr&gt;</code> dan <code>&lt;th&gt;</code> untuk membuat baris dan kolom di header.</li>
+            <li>Gunakan <code>&lt;tbody&gt;</code> untuk menambahkan isi tabel dengan <code>&lt;tr&gt;</code> dan <code>&lt;td&gt;</code>.</li>
+        </ol>
+        <h3>Contoh Kode:</h3>
+        <pre><code>
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th>Kepala Kolom 1&lt;/th&gt;
+            &lt;th>Kepala Kolom 2&lt;/th&gt;
+            &lt;th>Kepala Kolom 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Isi 1&lt;/td&gt;
+            &lt;td&gt;Isi 2&lt;/td&gt;
+            &lt;td&gt;Isi 3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Isi 4&lt;/td&gt;
+            &lt;td&gt;Isi 5&lt;/td&gt;
+            &lt;td&gt;Isi 6&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+        </code></pre>
+    </div>
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Malika Adelia Putri</p>
+        </div>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="tabel.html">Cara Membuat Tabel</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="form.html">Cara Membuat Form</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="register.html">Cara Membuat Register</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon">
+                <a href="https://www.instagram.com/m4likaadlp/?next=%2F" target="_blank">
+                    <i class="uil uil-instagram"></i>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="https://www.linkedin.com/in/malika-adelia-putri-468bba168/" target="_blank">
+                    <i class="uil uil-linkedin-alt"></i>
+                </a>
+            </div>
+            <div class="icon"><i class="uil uil-dribbble"></i></div>
+            <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+
+        <div class="bottom-footer">
+            <p>
+                Copyright &copy;
+                <a href="#home" style="text-decoration: none">Malika</a> - All
+                rights reserved
+            </p>
+        </div>
+    </footer>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

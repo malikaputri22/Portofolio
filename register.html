@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+
+    <title>Register Form</title>
+
+    <style>
+        :root {
+            /* Background and Primary Colors */
+            --body-color: #0b1957;
+            --color-white: #d2b3db;
+
+            /* Text Colors */
+            --text-color-second: #e9f3ff;
+            --text-color-third: #426bc2;
+
+            /* Primary Button & Link Colors */
+            --first-color: #5a4bb7;
+            --first-color-hover: #443791;
+
+            /* Accent Colors */
+            --second-color: #008c9e;
+            --third-color: #d4af37;
+
+            /* Shadow and Hover Effects */
+            --first-shadow-color: rgba(255, 255, 255, 0.1);
+            --second-shadow-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--body-color);
+            color: var(--text-color-second);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Header styles */
+        #header {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: var(--color-white);
+            box-shadow: 0 2px 5px var(--second-shadow-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-size: 24px;
+            color: var(--text-color-third);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav_menu_list {
+            font-size: 16px;
+            display: flex; /* Align items horizontally */
+            list-style-type: none; /* Remove default list styles */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        .nav-link {
+            color: var(--text-color-third);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--first-color);
+        }
+
+        /* Container for the register form */
+        .register-container,
+        .tutorial-section {
+            background-color: var(--color-white);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px var(--second-shadow-color);
+            margin: 20px auto; /* Center the containers */
+            width: 80%; /* Responsive width */
+            max-width: 500px; /* Maximum width for larger screens */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content inside */
+        }
+
+        .register-container h2,
+        .tutorial-section h2 {
+            margin: 10px 0 20px;
+            text-align: center;
+            color: var(--text-color-third);
+        }
+
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .register-container input[type="text"]:focus,
+        .register-container input[type="email"]:focus,
+        .register-container input[type="password"]:focus {
+            border-color: var(--first-color);
+        }
+
+        .register-container input[type="submit"],
+        .register-container input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .register-container input[type="submit"] {
+            background-color: var(--first-color);
+        }
+
+        .register-container input[type="submit"]:hover {
+            background-color: var(--first-color-hover);
+        }
+
+        .register-container input[type="reset"] {
+            background-color: var(--second-color);
+        }
+
+        .register-container input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--color-white);
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -2px 5px var(--second-shadow-color);
+            margin-top: 20px; /* Distance from the tutorial section */
+        }
+
+        .footer-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .footer-menu li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer-menu a {
+            color: var(--text-color-third);
+            text-decoration: none;
+        }
+
+        .footer-menu a:hover {
+            color: var(--first-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Tutorial</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tabel.html" class="nav-link active-link">Cara Membuat Tabel</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Cara Membuat Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+                <a href="register.html" class="nav-link">Cara Membuat Register</a>
+                <div class="circle"></div>
+              </li>
+          </ul>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+        </header>
+
+        <!-- Container utama untuk form registrasi -->
+        <div class="register-container">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+        </div>
+
+        <!-- --------------- TUTORIAL SECTION --------------- -->
+        <section class="tutorial-section">
+            <h2>Cara Membuat Form Registrasi Menggunakan HTML</h2>
+            <p>Berikut adalah langkah-langkah untuk membuat form registrasi di tampilan web:</p>
+            <ol>
+                <li><strong>Persiapkan Struktur HTML Dasar:</strong>
+                    <p>Mulailah dengan mendeklarasikan tipe dokumen dan menambahkan elemen <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, dan <code>&lt;body&gt;</code>.</p>
+                </li>
+                <li><strong>Tambahkan Elemen Header:</strong>
+                    <p>Gunakan elemen <code>&lt;nav&gt;</code> untuk membuat navigasi yang berisi nama dan tautan.</p>
+                </li>
+                <li><strong>Buat Kontainer untuk Form Registrasi:</strong>
+                    <p>Gunakan <code>&lt;div&gt;</code> untuk mengelompokkan elemen form agar terlihat rapi. Beri kelas (class) pada kontainer untuk memudahkan pengaturan gaya (CSS).</p>
+                </li>
+                <li><strong>Buat Elemen Form:</strong>
+                    <p>Gunakan elemen <code>&lt;form&gt;</code> untuk membuat form. Tambahkan atribut <code>action</code> dan <code>method</code> untuk menentukan pengiriman data.</p>
+                </li>
+                <li><strong>Tambahkan Input Fields:</strong>
+                    <p>Gunakan <code>&lt;input&gt;</code> untuk membuat kolom masukan (input fields) seperti username, email, password, dan konfirmasi password.</p>
+                    <p>Pastikan untuk menambahkan atribut <code>required</code> agar pengguna tidak dapat mengirimkan form tanpa mengisi kolom tersebut.</p>
+                </li>
+                <li><strong>Tambahkan Tombol Submit dan Reset:</strong>
+                    <p>Gunakan <code>&lt;input&gt;</code> dengan tipe <code>submit</code> dan <code>reset</code> untuk mengatur aksi pengiriman dan penghapusan form.</p>
+                </li>
+                <li><strong>Styling dengan CSS:</strong>
+                    <p>Di bagian <code>&lt;head&gt;</code>, Anda dapat menambahkan stylesheet CSS untuk mengatur warna, font, dan tata letak.</p>
+                </li>
+                <li><strong>Tambahkan Elemen Footer:</strong>
+                    <p>Buat footer yang berisi informasi tambahan, seperti hak cipta dan tautan media sosial.</p>
+                </li>
+                <li><strong>Uji Coba:</strong>
+                    <p>Jalankan form di browser untuk memastikan semuanya berfungsi dengan baik, dan lakukan pengujian untuk mengkonfirmasi input yang benar.</p>
+                </li>
+                <li><strong>Optimasi:</strong>
+                    <p>Pertimbangkan untuk menambahkan validasi JavaScript dan aksesibilitas untuk meningkatkan pengalaman pengguna.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- --------------- FOOTER --------------- -->
+      <footer>
+        <div class="top-footer">
+          <p>Malika Adelia Putri</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="#home">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="tabel.html">Cara Membuat Tabel</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="form.html">Cara Membuat Form</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="register.html">Cara Membuat Register</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+            <a href="https://www.instagram.com/m4likaadlp/?next=%2F" target="_blank">
+              <i class="uil uil-instagram"></i>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://www.linkedin.com/in/malika-adelia-putri-468bba168/" target="_blank">
+              <i class="uil uil-linkedin-alt"></i>
+            </a>
+          </div>
+          <div class="icon"><i class="uil uil-dribbble"></i></div>
+          <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Malika</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
