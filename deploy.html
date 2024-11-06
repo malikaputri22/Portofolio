@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Deploy HTML ke GitHub Pages</title>
+    <style>
+      /* RESET DEFAULT STYLES */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* BODY STYLES */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        padding-top: 100px; /* Padding untuk navbar fixed */
+        padding-bottom: 100px; /* Padding untuk footer fixed */
+        line-height: 1.6;
+      }
+
+      /* HEADER/ NAVBAR STYLES */
+      nav {
+        width: 100%;
+        background-color: #0b1957;
+        padding: 20px;
+        color: white;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: 0.3s ease;
+      }
+
+      .nav-link:hover {
+        background-color: #333;
+        border-radius: 5px;
+      }
+
+      /* CONTENT STYLES */
+      .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1, h2 {
+        color: #0b1957;
+      }
+
+      pre {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      code {
+        color: #ffdd57;
+      }
+
+      ul {
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #0b1957;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+
+      a {
+        color: #0b1957;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* FOOTER STYLES */
+      footer {
+        width: 100%;
+        background-color: #0b1957;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+      }
+
+      /* ADJUST FOOTER POSITION ON SCROLL */
+      .content {
+        min-height: calc(100vh - 200px); /* Sesuaikan tinggi konten agar tidak tertutup header dan footer */
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR / HEADER -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#">Deploy</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="tutorial.html" class="nav-link">Tutorial</a></li>
+          <li class="nav-item"><a href="form.html" class="nav-link">Form</a></li>
+          <li class="nav-item"><a href="tabel.html" class="nav-link">Tabel</a></li>
+          <li class="nav-item"><a href="loc.html" class="nav-link">API</a></li>
+          <li class="nav-item"><a href="kanvas.html" class="nav-link">Canvas</a></li>
+          <li class="nav-item"><a href="deploy.html" class="nav-link">Deploy</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+    
+
+    <!-- CONTENT -->
+    <div class="content">
+      <h1>Tutorial: Cara Deploy HTML ke GitHub Pages</h1>
+      <p>Berikut adalah langkah-langkah untuk mendeply sebuah website statis berbasis HTML ke GitHub Pages.</p>
+
+      <h2>Langkah-langkah:</h2>
+      <ol>
+        <li>Buat akun GitHub jika Anda belum memilikinya, dan login ke akun Anda di <a href="https://github.com" target="_blank">GitHub</a>.</li>
+        <li>Buat repository baru di GitHub dengan nama repository, misalnya <code>my-website</code>.</li>
+        <li>Upload file HTML dan asset website Anda (seperti gambar, CSS, dan JavaScript) ke repository tersebut.</li>
+        <li>Jika menggunakan Git untuk upload, gunakan perintah berikut di terminal:</li>
+        
+        <pre>
+          <code>
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/username/my-website.git
+git push -u origin main
+          </code>
+        </pre>
+
+        <li>Setelah file di-upload ke GitHub, buka pengaturan repository (tab <strong>Settings</strong>).</li>
+        <li>Scroll ke bawah sampai menemukan opsi <strong>GitHub Pages</strong> di bagian <em>Code and Automation</em>.</li>
+        <li>Di bagian <strong>Source</strong>, pilih branch <code>main</code> dan direktori <code>/root</code> (atau lokasi lain jika Anda menggunakan subfolder).</li>
+        <li>Setelah itu, GitHub Pages akan otomatis aktif, dan Anda akan diberikan link untuk mengakses website Anda. Biasanya link akan terlihat seperti ini:</li>
+        
+        <pre>
+          <code>
+https://username.github.io/my-website/
+          </code>
+        </pre>
+      </ol>
+
+      <h2>Contoh Project HTML Sederhana:</h2>
+      <p>Buat file HTML sederhana seperti ini:</p>
+      <pre>
+        <code>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Simple Website</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <p>This is my first website deployed on GitHub Pages.</p>
+</body>
+</html>
+        </code>
+      </pre>
+
+      <h2>Selamat! Anda berhasil deploy website Anda ke GitHub Pages!</h2>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2024 Malika Adelia Putri - All Rights Reserved</p>
+    </footer>
+
+  </body>
+</html>

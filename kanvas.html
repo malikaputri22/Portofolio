@@ -1,27 +1,245 @@
 <!DOCTYPE html>
-<html>
-<body>
-<p>Pilih Gambar:</p>
-<img id="gambar" 
-src="assets/images/fotomalika.jpg" 
-alt="gambar" 
-width="220" 
-height="277">
-<p>Mengisi :</p>
-<canvas id="kanvas" width="220" height="277"
-style="border: 1px solid #d3d3d3;">
-Your browser dose not support the HTML5 canvas tag.</canvas>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Canvas Example</title>
+    <style>
+      /* ----- RESET SOME DEFAULT STYLES ----- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<p><button onclick="kanvas()">Try it</button></p>
-<script>
-function kanvas(){
-    var c = document.getElementById("kanvas");
-    var ctx = c.getContext("2d");
-    var img = document.getElementById("gambar");
-    //menggambar gambar ke dalam canvas pada koordina 
-    ctx.drawImage(img, 0,0, c.width, c.height);
-}
-</script>
+      /* ----- BODY STYLES ----- */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        padding-top: 90px; /* Agar konten tidak tertutup oleh navbar */
+        padding-bottom: 100px; /* Agar konten tidak tertutup oleh footer */
+      }
 
-</body>
+      /* ----- NAVBAR STYLES ----- */
+      nav {
+        width: 100%;
+        background-color: #0b1957;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end; /* Menu berada di kanan atas */
+        flex: 1; /* Memastikan logo tetap di kiri dan menu di kanan */
+      }
+
+      .nav-item {
+        margin-left: 20px;
+      }
+
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: 0.3s ease;
+      }
+
+      .nav-link:hover {
+        background-color: #0b1957;
+        border-radius: 5px;
+      }
+
+      /* ----- CONTENT STYLES ----- */
+      .content {
+        text-align: center;
+        padding: 20px;
+        min-height: calc(100vh - 200px); /* Menyesuaikan tinggi konten agar tidak tertutup oleh navbar dan footer */
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0b1957;
+      }
+
+      /* ----- FOOTER STYLES ----- */
+      footer {
+        background-color: #0b1957;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 99;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .footer-menu {
+        list-style: none;
+        display: flex;
+        margin: 10px 0;
+      }
+
+      .footer-menu li {
+        margin: 0 10px;
+      }
+
+      .footer-menu a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .footer-menu a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+    <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Canvas</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link active-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="form.html" class="nav-link">Form</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="lo.html" class="nav-link">API</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+                <a href="tabel.html" class="nav-link">Tabel</a>
+                <div class="circle"></div>
+              </li>
+            <li class="nav_list">
+              <a href="kanvas.html" class="nav-link">Canvas</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="deploy.html" class="nav-link">Deploy</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <a href="https://drive.google.com/file/d/1l67m-AP2GaXXsjfNmcGGIUdqngNosgkR/view?usp=sharing" target="_blank">
+          <button class="btn">
+            Download CV <i class="uil uil-file-alt"></i>
+          </button>
+          </a>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+    <div class="content">
+      <h1>Canvas Example</h1>
+      <p>Pilih Gambar:</p>
+      <img id="gambar" src="assets/images/fotomalika.jpg" alt="gambar" width="220" height="277" />
+
+      <p>Mengisi :</p>
+      <canvas id="kanvas" width="220" height="277" style="border: 1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+
+      <p><button onclick="kanvas()">Try it</button></p>
+
+      <h2>Langkah-Langkah Membuat Canvas dengan HTML</h2>
+      <ol>
+        <li>Gunakan tag <code>&lt;canvas&gt;</code> untuk membuat area kanvas di HTML.</li>
+        <li>Tambahkan atribut <code>width</code> dan <code>height</code> untuk menentukan ukuran kanvas.</li>
+        <li>Gunakan JavaScript untuk mengakses elemen kanvas dengan <code>getContext('2d')</code>.</li>
+        <li>Gunakan fungsi <code>drawImage()</code> untuk menggambar gambar ke dalam kanvas.</li>
+      </ol>
+
+      <pre>
+        <code>
+          &lt;canvas id="kanvas" width="220" height="277"&gt;&lt;/canvas&gt;
+
+          &lt;script&gt;
+            var c = document.getElementById("kanvas");
+            var ctx = c.getContext("2d");
+            var img = document.getElementById("gambar");
+            ctx.drawImage(img, 0, 0, c.width, c.height);
+          &lt;/script&gt;
+        </code>
+      </pre>
+    </div>
+
+    <!-- ----- FOOTER ----- -->
+    <footer>
+      <div class="footer-container">
+        <p>© 2024 Malika Adelia Putri - All Rights Reserved</p>
+        <ul class="footer-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="form.html">Form</a></li>
+          <li><a href="loc.html">API</a></li>
+          <li><a href="tabel.html">Tabel</a></li>
+          <li><a href="kanvas.html">Canvas</a></li>
+          <li><a href="deploy.html">Deploy</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      function kanvas() {
+        var c = document.getElementById("kanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("gambar");
+        //menggambar gambar ke dalam canvas pada koordinat 0,0
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+      }
+    </script>
+  </body>
 </html>
