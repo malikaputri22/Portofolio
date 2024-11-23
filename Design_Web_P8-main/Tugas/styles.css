@@ -8,7 +8,7 @@ body {
 /* Header */
 .header {
   background-color: #f8f274; /* Warna background header */
-  height: 100px; /* Tinggi header */
+  height: 120px; /* Menambah tinggi header agar ada ruang untuk teks */
   display: flex; /* Menggunakan flexbox untuk menyusun elemen di dalamnya */
   align-items: center; /* Vertikal: Posisi elemen di tengah */
   justify-content: flex-start; /* Horizontal: Posisi elemen ke kiri (LOGO) */
@@ -16,10 +16,30 @@ body {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2); /* Menambahkan efek bayangan */
 }
 
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Memastikan teks rata tengah */
+}
+
 .logo img {
-  width: 60px; /* Mengatur lebar logo agar lebih proporsional */
+  width: 80px; /* Mengatur lebar logo agar lebih proporsional */
   height: auto; /* Menyesuaikan tinggi logo secara otomatis */
 }
+
+.name-npm {
+  margin-top: 5px; /* Memberikan jarak antara logo dan teks */
+}
+
+.name, .npm {
+  font-weight: bold; /* Membuat teks menjadi tebal */
+  margin: 0; /* Menghilangkan margin pada teks */
+  font-size: 14px; /* Ukuran teks */
+  line-height: 1.2; /* Menambahkan sedikit jarak antar baris teks */
+}
+
+
 
 /* Struktur Layout */
 .container {
