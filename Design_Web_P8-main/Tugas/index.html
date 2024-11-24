@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Halaman dengan Navigasi Bar</title>
-    <!-- Menghubungkan file CSS eksternal untuk memberikan gaya pada halaman -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Bagian Header -->
-    <header class="header">
-      <!-- Elemen untuk menampilkan logo -->
-      <div class="logo">LOGO</div>
-    </header>
-
-    <!-- Kontainer Utama: membungkus sidebar dan konten -->
-    <div class="container">
-      <!-- Sidebar: berisi menu navigasi -->
-      <div class="sidebar">
-        <ul class="nav">
-          <!-- Link navigasi untuk menu HOME -->
-          <li><a href="#">HOME</a></li>
-          <!-- Link navigasi untuk menu 1 -->
-          <li><a href="#">Menu 1</a></li>
-          <!-- Link navigasi untuk menu 2 -->
-          <li><a href="#">Menu 2</a></li>
-          <!-- Link navigasi untuk menu 3 -->
-          <li><a href="#">Menu 3</a></li>
-        </ul>
-      </div>
-
-      <!-- Konten utama halaman -->
-      <div class="content">
-        <!-- Paragraf yang berisi teks deskripsi -->
-        <p>ISI paragraph dari bab sebelumnya</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman dengan Navigasi Bar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Menghubungkan font-awesome untuk ikon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Bagian Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="image/logouty.png" alt="logouty" />
+      <div class="name-npm">
+        <p class="name">Malika Adelia Putri</p>
+        <p class="npm">NPM: 5220311046</p>
       </div>
     </div>
+  </header>
 
-    <!-- Bagian Footer -->
-    <footer class="footer">
-      <!-- Paragraf untuk informasi footer -->
-      <p>Pertemuan 8</p>
-    </footer>
-  </body>
+  <!-- Kontainer Utama -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Kotak Pencarian -->
+      <div class="search-box">
+        <input type="text" placeholder="Pencarian Menu" />
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+
+      <!-- Navigasi Menu -->
+      <ul class="nav">
+        <li>
+          <a href="#">
+            <i class="fas fa-user"></i> Profil Dosen
+          </a>
+        </li>
+        <li><a href="#">Menu Dosen</a></li>
+        <li><a href="#">Histori Mengajar</a></li>
+        <li><a href="#">Rekap Absensi MHS</a></li>
+        <li><a href="#">Input Berita Acara</a></li>
+        <li><a href="#">Menu Dosen Wali</a></li>
+        <li><a href="#">Bimbingan KRS</a></li>
+        <li><a href="#">Mahasiswa Key In</a></li>
+        <li><a href="#">Kelas Bimbingan</a></li>
+      </ul>
+    </div>
+
+    <!-- Konten -->
+    <div class="content">
+      <p>Isi paragraf dari bab sebelumnya</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>UNIVERSITAS TEKNOLOGI YOGYAKARTA</p>
+  </footer>
+</body>
 </html>
