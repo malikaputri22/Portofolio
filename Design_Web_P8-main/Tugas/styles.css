@@ -7,7 +7,7 @@ body {
 
 /* Header */
 .header {
-  background-color: #f8f274; /* Warna background header */
+  background-color: #fbd602; /* Warna background header */
   height: 120px; /* Menambah tinggi header agar ada ruang untuk teks */
   display: flex; /* Menggunakan flexbox untuk menyusun elemen di dalamnya */
   align-items: center; /* Vertikal: Posisi elemen di tengah */
@@ -50,7 +50,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: 200px; /* Lebar sidebar */
-  background-color: #1b1f99; /* Warna latar belakang sidebar */
+  background-color: #023981; /* Warna latar belakang sidebar */
   color: white; /* Warna teks sidebar */
   padding-top: 20px; /* Jarak isi sidebar dari atas */
   box-sizing: border-box; /* Memasukkan padding ke dalam lebar elemen */
@@ -75,7 +75,7 @@ body {
   padding: 10px; /* Jarak di dalam elemen link */
   display: block; /* Membuat elemen link memenuhi lebar container */
   text-align: left; /* Meratakan teks ke kiri */
-  background-color: #1b1f99; /* Warna background default link */
+  background-color: #023981; /* Warna background default link */
   border-radius: 5px; /* Membuat sudut link menjadi melengkung */
 }
 
