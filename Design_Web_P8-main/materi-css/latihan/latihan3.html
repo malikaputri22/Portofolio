@@ -8,22 +8,31 @@
     <style>
       /* Gaya khusus untuk bar navigasi */
       .navbar {
-        display: flex; /* Membuat elemen dalam bar navigasi berbaris horizontal */
-        justify-content: space-around; /* Memberi jarak yang merata antar elemen */
+        display: flex; /* Membuat elemen dalam bar navigasi berbaris horizontal
+                        inline-flex: agar navbar horizontal secukupnya
+                        inline-grid: agar navbar mepet kiri; */
+        justify-content: center; /* Memberi jarak yang merata antar elemen 
+                                  flex-end: dari kanan
+                                  flex-start: dari kiri
+                                  space-between: agar elemen kanan kiri nyentuk*/
         align-items: center; /* Pusatkan elemen secara vertikal */
-        background-color: #444; /* Warna latar belakang bar navigasi */
-        padding: 10px; /* Spasi dalam bar */
+        background-color: #1076b1; /* Warna latar belakang bar navigasi */
+        padding: 2px; /* Spasi dalam bar, 0: tidak ada spasi, 20px: spasi lebih besar*/
         border-radius: 8px; /* Membuat sudut membulat */
       }
-      .navbar a {
-        color: #ffd700; /* Warna teks emas */
-        text-decoration: none; /* Menghilangkan garis bawah */
-        font-size: 1.2rem; /* Ukuran font lebih besar */
-        padding: 10px 15px; /* Spasi dalam setiap link */
-        transition: background-color 0.3s ease; /* Animasi saat di-hover */
+      .navbar a {/* isi dari konten navbar (Beranda, Latihan1, Latihan2, Kontak)*/
+        color: #063e52; /* Warna teks emas */
+        text-decoration: underline; /* underline: Menghilangkan garis bawah
+                                      overline: garis di atasnya
+                                      line-through: garis melintang seperti dicoret */
+        font-size: 20px; /* Ukuran font lebih besar */
+        padding: 10px 15px; /* Spasi dalam setiap link 
+                              padding angka pertama buat atas bawah
+                              padding angka kedua buat kanan kiri*/
+        transition: background-color 2s ease; /* Animasi saat di-hover, kalo di klik muncul kotak samar samar */
       }
       .navbar a:hover {
-        background-color: #555; /* Warna latar belakang saat di-hover */
+        background-color: #be51be; /* Warna latar belakang saat di-hover */
         border-radius: 4px; /* Membuat sudut membulat saat di-hover */
       }
     </style>

@@ -26,11 +26,11 @@ body {
                          Pilihan lain:
                          - 1.2: Jarak lebih kecil
                          - 2: Jarak lebih besar */
-  color: #e0e0e0; /* Warna teks terang untuk dark mode 
+  color: #1d364b; /* Warna teks terang untuk dark mode 
                        Pilihan lain:
                        - #ffffff: Putih penuh
                        - #cccccc: Abu-abu lebih terang */
-  background: #1c1c1c; /* Latar belakang hitam untuk dark mode 
+  background: #c6eaf9; /* Latar belakang hitam untuk dark mode 
                             Pilihan lain:
                             - #000000: Hitam pekat
                             - #2c2c2c: Hitam dengan tone lebih terang */
@@ -49,11 +49,11 @@ header {
   margin-bottom: 20px; /* Jarak bawah header 
                             Pilihan lain:
                             - margin-bottom: 10px; Jarak lebih kecil */
-  background-color: #333; /* Warna gelap untuk header 
+  background-color: #2fa3ca; /* Warna biru untuk header 
                                Pilihan lain:
                                - #444: Warna lebih terang
                                - #222: Warna lebih gelap */
-  color: #0451f8; /* Warna biru terang untuk teks header 
+  color: #0f374a; /* Warna biru gelap untuk teks header 
                        Pilihan lain:
                        - #f1c40f: Emas cerah
                        - #ffffff: Putih */
@@ -128,7 +128,7 @@ footer {
                           Pilihan lain:
                           - 1rem: Ukuran sedang
                           - 0.8rem: Lebih kecil */
-  color: #999; /* Warna abu-abu terang 
+  color: #5e5a5a; /* Warna abu-abu terang 
                     Pilihan lain:
                     - #aaa: Lebih terang
                     - #666: Lebih gelap */
